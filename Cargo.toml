@@ -1,0 +1,17 @@
+[package]
+name = "v_customizer"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0"
+eframe = { version = "0.15", features = ["persistence"] }
+serde = { version = "1.0", features = ["derive"] }
+
+[profile.release]
+lto = true
+panic = 'abort'
+codegen-units = 1
+opt-level = 's'
